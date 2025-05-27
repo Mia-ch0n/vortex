@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@tabler/icons-react": "^3.33.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.14.0",
     "motion": "^12.14.0",
