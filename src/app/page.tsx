@@ -1,14 +1,17 @@
 import Hero from "@/components/Hero";
-import Nav from "@/components/Nav";
 import Games from "@/components/Games";
 import React from "react";
+import Layout from "@/components/Layout";
+import { PlaceholdersAndVanishInputDemo } from "@/components/AllGamesWithSearchBar";
 
 const Page = () => {
   return (
     <>
-      <Nav />
-      <Hero />
-      <Games/>
+      <Layout>
+        <Hero />
+        <Games />
+        <PlaceholdersAndVanishInputDemo />
+      </Layout>
     </>
   );
 };
