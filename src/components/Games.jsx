@@ -2,7 +2,7 @@
 import React from "react";
 import { Carousel, Card } from "./Cards";
 import { useQuery } from "@tanstack/react-query";
-import { fetchGames } from "@/api";
+import { fetchGames } from "@/lib/api";
 export default function AppleCardsCarouselDemo() {
   const {
     data: games = [],
