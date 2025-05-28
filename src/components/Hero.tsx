@@ -1,83 +1,77 @@
 "use client";
+import { useState } from "react";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import { motion } from "motion/react";
-
+const navigation = [
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Marketplace", href: "#" },
+  { name: "Company", href: "#" },
+  { name: "Log in", href: "#" },
+];
 export default function Hero() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="relative mx-auto my-2 flex max-w-screen flex-col items-center justify-center h-screen">
-      <video
-        autoPlay
-        muted
-        playsInline
-        className="absolute inset-0 z-0 h-screen w-full object-cover"
-      >
-        <source src="/logo/13081-244835852_small.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
-        <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
+    <div className="relative bg-background text-foreground">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            className="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-background lg:block"
+          >
+            <polygon points="0,0 90,0 50,100 0,100" />
+          </svg>
+
+          <div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+              <div className="hidden sm:mb-10 sm:flex">
+                <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-300 ring-1 ring-gray-700 hover:ring-gray-600">
+                  Anim aute id magna aliqua ad ad non deserunt sunt.{" "}
+                  <a
+                    href="#"
+                    className="font-semibold whitespace-nowrap text-indigo-400 hover:text-indigo-300"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0" />
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+              <h1 className="text-5xl font-medium tracking-tight text-pretty text-white sm:text-6xl font-sans">
+                Data to enrich your business
+              </h1>
+              <p className="mt-8 text-lg font-normal text-pretty text-gray-300 sm:text-xl/8">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+                fugiat aliqua.
+              </p>
+              <div className="mt-10 flex items-center gap-x-6">
+                <a
+                  href="#"
+                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Get started
+                </a>
+                <a
+                  href="#"
+                  className="text-sm/6 font-semibold text-gray-200 hover:text-white"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="absolute inset-y-0 right-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
-        <div className="absolute h-40 w-px bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
-      </div>
-      <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
-        <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-      </div>
-      <div className="px-4 py-10 md:py-40">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
-          {"Your Portal to Gaming Greatness".split(" ").map((word, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: index * 0.1,
-                ease: "easeInOut",
-              }}
-              className="mr-2 inline-block"
-            >
-              {word}
-            </motion.span>
-          ))}
-        </h1>
-        <motion.p
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 0.8,
-          }}
-          className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
-        >
-          Discover, rate, and collect the best video games. Dive into player
-          reviews, explore new releases, and find your next adventure—all in one
-          place.
-        </motion.p>
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 1,
-          }}
-          className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
-        >
-          <button className="w-60 transform rounded-lg bg-black px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
-            Explore Now
-          </button>
-          <button className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
-            Discover Games
-          </button>
-        </motion.div>
+      <div className="bg-gray-900 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img
+          alt=""
+          src="https://pt.egw.news/_next/image?url=https%3A%2F%2Fegw.news%2Fuploads%2Fnews%2F1%2F17%2F1743925013265_1743925013265.webp&w=1920&q=75"
+          className="aspect-3/2 object-cover lg:aspect-auto lg:size-full"
+        />
       </div>
     </div>
   );
