@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import CustomCursor from "@/components/CustomCursor";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DependenciesInjection from "@/components/DependenciesInjection";
