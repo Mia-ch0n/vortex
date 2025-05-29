@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "/api", 
+  baseURL: "/api",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -60,7 +60,16 @@ const handleError = (error, method, endpoint) => {
 };
 
 
-export const fetchGames = () => get("/games");
+export const fetchGames = (search = "") => {
+  console.log(search);
+  return get("/games", {
+    params: {
+      search,
+    },
+  });
+};
+
+
 export const fetchFeaturedGames = () => get("/featured-games");
 export const fetchMostRatedGames = () => get("/most-rated-games");
 // export const createGame = (data) => post("/games", data);

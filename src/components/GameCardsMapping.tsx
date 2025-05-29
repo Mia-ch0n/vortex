@@ -18,7 +18,7 @@ export default function GameCardsMapping({ data }: GameCardsMappingProps) {
                         className="rounded-2xl border border-transparent p-1 hover:border-white/30"
                     >
                         <div className="relative">
-                            <div className="relative h-72 w-full overflow-hidden rounded-lg">
+                            <div className="relative h-96 w-full overflow-hidden rounded-lg">
                                 <img
                                     alt={game.name}
                                     src={game.image_url}
@@ -29,7 +29,7 @@ export default function GameCardsMapping({ data }: GameCardsMappingProps) {
                                 <h3 className="text-lg font-mono font-medium text-white">{game.name}</h3>
                                 <p className="mt-1 text-sm font-mono text-gray-500">{game.publisher}</p>
                             </div>
-                            <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                            <div className="absolute inset-x-0 top-0 flex h-96 items-end justify-end overflow-hidden rounded-lg p-4">
                                 <div
                                     aria-hidden="true"
                                     className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"

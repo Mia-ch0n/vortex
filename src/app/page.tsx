@@ -4,6 +4,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import { PlaceholdersAndVanishInputDemo } from "@/components/AllGamesWithSearchBar";
 import MostRatedGames from "@/components/MostRatedGames";
+import { Credits } from "@/components/Credits";
 
 const Page = () => {
   return (
@@ -13,6 +14,7 @@ const Page = () => {
         <FeaturedGames />
         <MostRatedGames />
         <PlaceholdersAndVanishInputDemo />
+        <Credits />
       </Layout>
     </>
   );

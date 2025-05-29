@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --background: #02050d;
