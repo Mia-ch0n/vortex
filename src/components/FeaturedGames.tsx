@@ -2,38 +2,34 @@
 import React, { JSX } from "react";
 import { Carousel, Card } from "./Cards";
 import { useQuery } from "@tanstack/react-query";
-import { fetchGames } from "@/lib/api";
+import { fetchFeaturedGames } from "@/lib/api";
 import Loader from "./Loader";
+import Container from "./Container";
+import { Game } from "@/types/game";
+import { useGetFeaturedGames } from "@/hooks/useGetFeaturedGames";
 
-interface Game {
-  id: number;
-  name: string;
-  publisher: string;
-  image_url: string;
-  description: string;
-}
+
 
 export default function AppleCardsCarouselDemo(): JSX.Element {
   const {
     data: games = [],
     isLoading,
     error,
-  } = useQuery<Game[], Error>({
-    queryKey: ["games"],
-    queryFn: fetchGames,
-  });
+  } = useGetFeaturedGames();
 
   if (isLoading) return <Loader />;
   if (error) return <div className="flex justify-center my-14 text-white">Error loading games.</div>;
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto font-mono text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200">
-        Discover, Play, Conquer.
-      </h2>
-      <p className="max-w-7xl font-mono pl-4 mx-auto text-xs md:text-sm text-white dark:text-white opacity-60 mt-4">
-        Featured Games
-      </p>
+      <Container>
+        <h2 className="  mx-auto font-mono text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200">
+          Discover, Play, Conquer.
+        </h2>
+        <p className=" font-mono mx-auto text-xs md:text-sm text-white dark:text-white opacity-60 mt-4">
+          Featured Games
+        </p>
+      </Container>
       <Carousel
         items={games.map((game, index) => (
           <Card

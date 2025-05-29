@@ -15,17 +15,19 @@ import { useState } from "react";
 export function Nav() {
   const navItems = [
     {
+      name: "Search",
+      link: "#search",
+    },
+    {
+      name: "Community",
+      link: "/community",
+    },
+
+    {
       name: "Favourites",
       link: "/favourites",
     },
-    {
-      name: "Friends",
-      link: "/friends",
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
+
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
