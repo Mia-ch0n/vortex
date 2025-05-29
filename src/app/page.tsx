@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Games from "@/components/Games";
+import FeaturedGames from "@/components/FeaturedGames";
 import React from "react";
 import Layout from "@/components/Layout";
 import { PlaceholdersAndVanishInputDemo } from "@/components/AllGamesWithSearchBar";
@@ -9,7 +9,7 @@ const Page = () => {
     <>
       <Layout>
         <Hero />
-        <Games />
+        <FeaturedGames />
         <PlaceholdersAndVanishInputDemo />
       </Layout>
     </>

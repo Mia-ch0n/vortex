@@ -36,6 +36,15 @@ export default function Hero() {
 
           <div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:pr-0">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+              <div className="mb-5">
+                <img
+                  src="/logo/logo.png"
+                  alt="logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full border border-white p-1"
+                />
+              </div>
               <div className="hidden sm:mb-10 sm:flex">
                 <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-300 ring-1 ring-gray-700 hover:ring-gray-600 font-mono">
                   New games added daily - no DRM, no restrictions{" "}
