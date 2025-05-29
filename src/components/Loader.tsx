@@ -1,12 +1,12 @@
 import React from 'react'
-import { CircleLoader } from 'react-spinners'
+import { PulseLoader  } from 'react-spinners'
 
 const Loader = () => {
     return (
         <div className='mx-auto flex justify-center my-14 '>
-            <CircleLoader
+            <PulseLoader 
                 color="#ffffff"
-                size={100}
+                size={20}
             />
         </div>
     )
