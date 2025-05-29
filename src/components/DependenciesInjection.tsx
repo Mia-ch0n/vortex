@@ -9,6 +9,7 @@ const DependenciesInjection = ({ children }: PropsWithChildren) => {
     <QueryClientProvider client={queryClient}>
       {children}
       <CustomCursor />
+      
     </QueryClientProvider>
   );
 };
