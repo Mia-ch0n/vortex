@@ -17,41 +17,41 @@ const get = async (endpoint, config = {}) => {
   }
 };
 
-const post = async (endpoint, data, config = {}) => {
-  try {
-    const response = await apiClient.post(endpoint, data, config);
-    return response.data;
-  } catch (error) {
-    handleError(error, "POST", endpoint);
-  }
-};
+// const post = async (endpoint, data, config = {}) => {
+//   try {
+//     const response = await apiClient.post(endpoint, data, config);
+//     return response.data;
+//   } catch (error) {
+//     handleError(error, "POST", endpoint);
+//   }
+// };
 
-const put = async (endpoint, data, config = {}) => {
-  try {
-    const response = await apiClient.put(endpoint, data, config);
-    return response.data;
-  } catch (error) {
-    handleError(error, "PUT", endpoint);
-  }
-};
+// const put = async (endpoint, data, config = {}) => {
+//   try {
+//     const response = await apiClient.put(endpoint, data, config);
+//     return response.data;
+//   } catch (error) {
+//     handleError(error, "PUT", endpoint);
+//   }
+// };
 
-const patch = async (endpoint, data, config = {}) => {
-  try {
-    const response = await apiClient.patch(endpoint, data, config);
-    return response.data;
-  } catch (error) {
-    handleError(error, "PATCH", endpoint);
-  }
-};
+// const patch = async (endpoint, data, config = {}) => {
+//   try {
+//     const response = await apiClient.patch(endpoint, data, config);
+//     return response.data;
+//   } catch (error) {
+//     handleError(error, "PATCH", endpoint);
+//   }
+// };
 
-const del = async (endpoint, config = {}) => {
-  try {
-    const response = await apiClient.delete(endpoint, config);
-    return response.data;
-  } catch (error) {
-    handleError(error, "DELETE", endpoint);
-  }
-};
+// const del = async (endpoint, config = {}) => {
+//   try {
+//     const response = await apiClient.delete(endpoint, config);
+//     return response.data;
+//   } catch (error) {
+//     handleError(error, "DELETE", endpoint);
+//   }
+// };
 
 
 const handleError = (error, method, endpoint) => {

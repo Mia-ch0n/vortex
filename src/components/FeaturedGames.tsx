@@ -1,11 +1,8 @@
 "use client";
 import React, { JSX } from "react";
 import { Carousel, Card } from "./Cards";
-import { useQuery } from "@tanstack/react-query";
-import { fetchFeaturedGames } from "@/lib/api";
 import Loader from "./Loader";
 import Container from "./Container";
-import { Game } from "@/types/game";
 import { useGetFeaturedGames } from "@/hooks/useGetFeaturedGames";
 
 
