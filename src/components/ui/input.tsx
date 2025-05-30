@@ -3,10 +3,7 @@ import * as React from "react";
 import { cn } from "@/lib/cn";
 import { useMotionTemplate, useMotionValue, motion } from "motion/react";
 
-// Fix: Remove empty interface; directly use the supertype
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
   ({ className, type, ...props }, ref) => {
     const radius = 100;
     const [visible, setVisible] = React.useState(false);
