@@ -2,7 +2,7 @@
 import React from 'react'
 import Container from './Container'
 import GameCardsMapping from './GameCardsMapping'
-import { useGetMostRatedGames } from '@/hooks/useGetMostRatedGames';
+import { useGetMostRatedGames } from '../hooks/useGetMostRatedGames';
 import Loader from './Loader';
 
 const MostRatedGames = () => {

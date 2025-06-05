@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'framer-motion'
-import { Game } from "@/types/game";
+import { Game } from "../types/game";
 
 interface GameCardsMappingProps {
     data: Game[];

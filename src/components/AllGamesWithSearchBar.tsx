@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetAllGames } from "@/hooks/useGetAllGames";
+import { useGetAllGames } from "../hooks/useGetAllGames";
 import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 import Loader from "./Loader";
 import GameCardsMapping from "./GameCardsMapping";

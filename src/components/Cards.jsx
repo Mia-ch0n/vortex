@@ -11,9 +11,9 @@ import {
   IconArrowNarrowRight,
   IconX,
 } from "@tabler/icons-react";
-import { cn } from "@/lib/cn";
+import { cn } from "../lib/cn";
 import { AnimatePresence, motion } from "motion/react";
-import { useOutsideClick } from "@/hooks/use-outside-click";
+import { useOutsideClick } from "../hooks/use-outside-click";
 
 export const CarouselContext = createContext({
   onCardClose: () => {},

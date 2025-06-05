@@ -3,7 +3,7 @@ import React, { JSX } from "react";
 import { Carousel, Card } from "./Cards";
 import Loader from "./Loader";
 import Container from "./Container";
-import { useGetFeaturedGames } from "@/hooks/useGetFeaturedGames";
+import { useGetFeaturedGames } from "../hooks/useGetFeaturedGames";
 
 
 
