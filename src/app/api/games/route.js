@@ -7,7 +7,9 @@ export async function GET(request) {
   let query = supabase.from("games").select("*, system_requirements(*)");
 
   if (search) {
-    query = query.ilike("name", `%${search}%`);
+    query = query.or(
+      `name.ilike.%${search}%,publisher.ilike.%${search}%,description.ilike.%${search}%`
+    );
   }
 
   const { data, error } = await query;
