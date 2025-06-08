@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import React, { useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 // ---------- Interfaces ----------
 
@@ -111,6 +112,20 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    name: string
+  ) => {
+    if (name === "Community" || name === "Favourites") {
+      e.preventDefault(); // stop navigation
+      toast("⚠️ Module not developed yet.");
+      return;
+    }
+
+    // Run external click handler if provided
+    onItemClick?.();
+  };
+
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -124,7 +139,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           key={`link-${idx}`}
           href={item.link}
           onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
+          onClick={(e) => handleClick(e, item.name)}
           className="relative px-4 py-2 text-neutral-600 font-mono dark:text-neutral-300"
         >
           {hovered === idx && (

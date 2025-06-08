@@ -24,7 +24,6 @@ export default function RootLayout({
           <DependenciesInjection>
             {children}
           </DependenciesInjection>
-          <Toaster position="top-center" />
         </AuthProvider>
       </body>
     </html>
