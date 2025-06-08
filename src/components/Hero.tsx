@@ -22,7 +22,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative bg-background text-foreground">
+    <div className="relative bg-background text-foreground lg:h-screen">
       <div className="mx-auto max-w-7xl">
         <div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
           <svg
