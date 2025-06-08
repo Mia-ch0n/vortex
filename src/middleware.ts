@@ -14,7 +14,6 @@ export async function middleware(req: NextRequest) {
     const protectedRoutes = [
         "/dashboard",
         "/profile",
-        "/games",
         "/reviews",
         "/settings",
     ];
@@ -42,7 +41,6 @@ export const config = {
         // Specifically include protected routes
         "/dashboard/:path*",
         "/profile/:path*",
-        "/games/:path*",
         "/reviews/:path*",
         "/settings/:path*",
     ],

@@ -13,7 +13,6 @@ interface User {
 interface Profile {
     id: string;
     username: string;
-    full_name: string;
     avatar_url: string;
 }
 
@@ -31,10 +30,10 @@ const AuthContext = createContext<AuthContextType>({
     user: null,
     profile: null,
     loading: true,
-    signIn: async () => {},
-    signInWithGoogle: async () => {},
-    signUp: async () => {},
-    signOut: async () => {},
+    signIn: async () => { },
+    signInWithGoogle: async () => { },
+    signUp: async () => { },
+    signOut: async () => { },
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -52,7 +51,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             try {
                 // Get initial session
                 const { data: { session } } = await supabase.auth.getSession();
-                
+
                 if (session?.user) {
                     setUser(session.user as User);
                     // Fetch profile
@@ -77,7 +76,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // Listen for auth state changes
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
             console.log("Auth state changed:", event, session);
-            
+
             if (session?.user) {
                 setUser(session.user as User);
                 // Fetch profile
@@ -133,7 +132,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                             {
                                 id: data.user.id,
                                 username: email.split("@")[0],
-                                full_name: email.split("@")[0],
                                 avatar_url: "",
                             },
                         ]);
@@ -195,7 +193,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                         {
                             id: data.user.id,
                             username,
-                            full_name: username,
                             avatar_url: "",
                         },
                     ]);
@@ -217,21 +214,36 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const signOut = async () => {
         try {
+            // Clear local state first
+            setUser(null);
+            setProfile(null);
+
+            // Supabase sign out
             const { error } = await supabase.auth.signOut();
+
             if (error) {
                 toast.error(error.message);
                 return;
             }
-            // Clear local state
-            setUser(null);
-            setProfile(null);
+
+            // Optional: Remove any custom localStorage items
+            localStorage.removeItem("supabase.auth.token");
+
+            // Show success toast
             toast.success("Successfully logged out!");
-            router.push("/");
+
+            // Wait a bit so the toast has time to animate before hard reload
+            setTimeout(() => {
+                // Replace current route and force refresh
+                router.replace("/");
+                window.location.href = "/";
+            }, 1000); // 1 second delay
         } catch (error) {
             console.error("Error signing out:", error);
             toast.error("An error occurred during sign out");
         }
     };
+
 
     return (
         <AuthContext.Provider

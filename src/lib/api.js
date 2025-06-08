@@ -69,6 +69,7 @@ export const fetchGames = (search = "") => {
   });
 };
 
+export const fetchGameById = (id) => get(`/get-game-by-id/${id}`);
 
 export const fetchFeaturedGames = () => get("/featured-games");
 export const fetchMostRatedGames = () => get("/most-rated-games");

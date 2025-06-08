@@ -1,12 +1,14 @@
 "use client";
 import { motion } from 'framer-motion'
 import { Game } from "../types/game";
+import { useRouter } from 'next/navigation';
 
 interface GameCardsMappingProps {
     data: Game[];
 }
 
 export default function GameCardsMapping({ data }: GameCardsMappingProps) {
+    const router = useRouter()
     return (
         <div className="mx-auto max-w-2xl py-16 lg:max-w-7xl">
             <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
@@ -15,6 +17,7 @@ export default function GameCardsMapping({ data }: GameCardsMappingProps) {
                         key={game.id}
                         whileHover={{ scale: 1.03 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        onClick={() => router.push(`/games/${game.id}`)}
                         className="rounded-2xl border border-transparent p-1 hover:border-white/30"
                     >
                         <div className="relative">
